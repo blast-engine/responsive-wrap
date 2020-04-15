@@ -2,7 +2,7 @@ import React from 'react'
 
 import './styles.module.css'
 
-export const ExampleComponent = class ResponsiveGrid extends React.Component {
+export const ResponsiveWrap = class ResponsiveWrap extends React.Component {
   
   state = { numCols: 1 }
 
