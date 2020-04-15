@@ -8,14 +8,14 @@ export const ResponsiveWrap = class ResponsiveWrap extends React.Component {
 
   componentDidMount() {
     this.calculateNumColsPerRow()
-    window.addEventListener('resize', () => this.calculateNumColsPerRow())
+    window.addEventListener('resize', this.calculateNumColsPerRow)
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize')
+    window.removeEventListener('resize', this.calculateNumColsPerRow)
   }
 
-  calculateNumColsPerRow() {
+  calculateNumColsPerRow = () => {
     const { minWidth, children } = this.props
     const numCols = Math.floor(this.containerRef.current.offsetWidth / minWidth)
     this.setState({ numCols: Math.min(numCols, children.length) })
