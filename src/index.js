@@ -1,7 +1,5 @@
 import React from 'react'
 
-import './styles.module.css'
-
 export const ResponsiveWrap = class ResponsiveWrap extends React.Component {
   
   state = { numCols: 1 }
@@ -28,7 +26,17 @@ export const ResponsiveWrap = class ResponsiveWrap extends React.Component {
     const { numCols } = this.state
 
     return (
-      <div ref={this.containerRef} className='inner-div'>
+      <div 
+        ref={this.containerRef} 
+        className='inner-div'
+        style={{
+          width: '100%',
+          display: 'flex',
+          flex: 1,
+          flexDirection: 'row',
+          flexWrap: 'wrap'
+        }}
+      >
         {
           children.map((child, index) => (
             <div 
