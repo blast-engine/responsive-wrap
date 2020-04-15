@@ -15,15 +15,24 @@ npm install --save @blast-engine/responsive-wrap
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from '@blast-engine/responsive-wrap'
-import '@blast-engine/responsive-wrap/dist/index.css'
+import { ResponsiveWrap } from '@blast-engine/responsive-wrap'
+import '@blast-engine/responsive-wrap'
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+    return (
+      <ResponsiveWrap minWidth={100} maxWidth={200} >
+        {/* children */}
+      </ResponsiveWrap>
+    )
   }
 }
 ```
+### Props
+- minWidth: minimum width of each child [required]
+- maxWidth: maximum width of each child [required]
+- children: children to render [required]
+- outerDivClassName: class name for outer div [optional]
 
 ## License
 
